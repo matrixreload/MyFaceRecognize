@@ -1,0 +1,230 @@
+//
+//  CustomFaceRecognizer.m
+//  MyFaceRecognize
+//
+//  Created by matrix on 15/11/21.
+//  Copyright © 2015年 matrix. All rights reserved.
+//
+
+#import "CustomFaceRecognizer.h"
+#import "OpenCVData.h"
+
+
+
+
+@implementation CustomFaceRecognizer
+
+
+
+- (id)init{
+    self = [self init];
+    if (self) {
+        [self loadDatabase];
+    }
+    
+    return self;
+}
+
+- (id)initWithEigenFaceRecognizer{
+    self = [self init];
+    _model = cv::createEigenFaceRecognizer();
+    
+    return self;
+}
+
+- (id)initWithFisherFaceRecognizer{
+    self = [self init];
+    _model = cv::createFisherFaceRecognizer();
+    
+    return self;
+}
+
+- (id)initWithLBPHFaceRecognizer{
+    self = [self init];
+    _model = cv::createLBPHFaceRecognizer();
+    
+    return self;
+}
+
+
+- (void)loadDatabase{
+    if (sqlite3_open([[self dbPath] UTF8String], &_db) != SQLITE_OK) {
+        NSLog(@"open database error");
+    }
+    
+    [self createTableIfNeeded];
+}
+
+
+- (NSString *)dbPath{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    return [documentDirectory stringByAppendingPathComponent:@"training-data.sqlite"];
+    
+}
+
+
+- (int)newPersonWithName:(NSString *)name{
+    const char* newperson = "INSERT INTO people (name) VALUES(?)";
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_prepare_v2(_db, newperson, -1, &statement, nil)) {
+        sqlite3_bind_text(statement, 1, [name UTF8String], -1 , SQLITE_TRANSIENT);
+        sqlite3_step(statement);
+    }
+    
+    sqlite3_finalize(statement);
+    
+    return (int)sqlite3_last_insert_rowid(_db);
+}
+
+
+- (NSMutableArray *)getAllPeople{
+    NSMutableArray *results = [[NSMutableArray alloc] init];
+    
+    const char *findPeopleSQL = "SELECT id,name FROM people ORDER BY name";
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_prepare_v2(_db, findPeopleSQL, -1, &statement, nil) == SQLITE_OK) {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            NSNumber *personID = [NSNumber numberWithInt:sqlite3_column_int(statement, 0)];
+            NSString *personName = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 1)];
+        
+            [results addObject:@{@"id":personID , @"name":personName}];
+        }
+    }
+    
+    sqlite3_finalize(statement);
+    
+    return results;
+}
+
+
+- (BOOL)trainModel{
+    std::vector<cv::Mat> images;
+    std::vector<int> labels;
+    
+    const char* selectSQL = "SELECT person_id,image FROM images";
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_prepare_v2(_db, selectSQL, -1, &statement, nil) == SQLITE_OK) {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            int personID = sqlite3_column_int(statement, 0);
+            
+            //pull out the image into NSdata
+            int imageSize = sqlite3_column_bytes(statement, 1);
+            NSData *image = [NSData dataWithBytes:sqlite3_column_blob(statement, 1) length:imageSize];
+            
+            cv::Mat faceData = [OpenCVData dataToMat:image
+                                                width:[NSNumber
+                                        numberWithInt:100]
+                                              height:[NSNumber numberWithInt:100]];
+            
+            images.push_back(faceData);
+            labels.push_back(personID);
+            
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    if (images.size() > 0 && labels.size() > 0) {
+        _model -> train(images, labels);
+        return YES;
+    }
+    return NO;
+}
+
+- (void)forgetAllFacesForPersonID:(int)personID{
+    const char* deleteSQL = "DELETE FROM images WHERE person_id = ?";
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(_db, deleteSQL, -1, &statement, nil) == SQLITE_OK) {
+        sqlite3_bind_int(statement, 1, personID);
+        sqlite3_step(statement);
+    }
+    
+    sqlite3_finalize(statement);
+}
+
+- (void)learnFace:(cv::Rect)face ofPersonID:(int)personID fromImage:(cv::Mat &)image{
+    cv::Mat faceData = [self pullStandardizedFace:face fromImage:image];
+    NSData *serialized = [OpenCVData serializeCvMat:faceData];
+    
+    const char* insertSQL = "INSERT INTO images (person_id,image) VALUES(?,?)";
+    
+    sqlite3_stmt *statement;
+    
+    
+    if (sqlite3_prepare_v2(_db, insertSQL, -1, &statement, nil)) {
+        sqlite3_bind_int(statement, 1, personID);
+        sqlite3_bind_blob(statement, 2, serialized.bytes, (int)serialized.length  , SQLITE_TRANSIENT);
+        sqlite3_step(statement);
+    }
+    
+    sqlite3_finalize(statement);
+}
+
+- (cv::Mat)pullStandardizedFace:(cv::Rect)face fromImage:(cv::Mat &)image{
+    cv::Mat onlyTheFace;
+    cv::cvtColor(image(face), onlyTheFace, CV_RGB2GRAY);
+    
+    cv::resize(onlyTheFace, onlyTheFace, cv::Size(100,100), 0, 0);
+    
+    return onlyTheFace;
+}
+
+
+- (NSDictionary *)recognizeFace:(cv::Rect)face inImage:(cv::Mat &)image{
+    int predictedLabel = -1;
+    double confidence = 0.0;
+    _model->predict([self pullStandardizedFace:face fromImage:image], predictedLabel, confidence);
+    
+    NSString *personName = @"";
+    
+    if (predictedLabel != -1) {
+        const char* selectSQL = "SELECT name FROM people WHERE id = ?";
+        sqlite3_stmt *statement;
+        if (sqlite3_prepare_v2(_db, selectSQL, -1, &statement, nil) == SQLITE_OK) {
+            sqlite3_bind_int(statement, 1, predictedLabel);
+            
+            if (sqlite3_step(statement) != SQLITE_DONE) {
+                personName = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 0)];
+            }
+        }
+        
+        sqlite3_finalize(statement);
+    }
+    
+    return @{@"personID":[NSNumber numberWithInt:predictedLabel],
+             @"personName":personName,
+             @"confidence":[NSNumber numberWithDouble:confidence]};
+    
+}
+
+
+
+
+
+- (void) createTableIfNeeded{
+    
+    //create people table
+    const char *peopleSql = "CREATE TABLE IF NOT EXISTS people"
+                            "('id' integer NOT NULL PRIMARY KEY AUTOINCREMENT,"
+                            "'name' text NOT NULL)";
+    char* errMsg = new char[1024];
+    if (sqlite3_exec(_db, peopleSql, nil, nil, &errMsg) != SQLITE_OK) {
+        printf("create people table error:  %s\n",errMsg);
+    }
+    
+    //create image table
+    const char* imageSQL = "CREATE TABLE IF NOT EXISTS images"
+                            "('id'  integer NOT NULL PRIMARY KEY AUTOINCREMENT,"
+                            "'person_id' integer NOT NULL,"
+                            "'image' blob NOT NULL )";
+    
+    if (sqlite3_exec(_db, imageSQL, nil, nil, nil)) {
+        printf("create image table error:  %s\n",errMsg);
+    }
+}
+
+
+@end

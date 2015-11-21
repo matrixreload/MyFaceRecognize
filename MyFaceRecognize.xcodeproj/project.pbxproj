@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66B0C9731BFDC2AE0070EFAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C9721BFDC2AE0070EFAB /* main.m */; };
+		66B0C9761BFDC2AE0070EFAB /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C9751BFDC2AE0070EFAB /* AppDelegate.mm */; };
+		66B0C9791BFDC2AE0070EFAB /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C9781BFDC2AE0070EFAB /* ViewController.mm */; };
+		66B0C97E1BFDC2AE0070EFAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B0C97D1BFDC2AE0070EFAB /* Assets.xcassets */; };
+		66B0C98A1BFDC4780070EFAB /* rootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C9891BFDC4780070EFAB /* rootViewController.mm */; };
+		66B0C9901BFEFD610070EFAB /* FaceDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C98F1BFEFD610070EFAB /* FaceDetector.mm */; };
+		66B0C9931C0002ED0070EFAB /* CustomFaceRecognizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C9921C0002ED0070EFAB /* CustomFaceRecognizer.mm */; };
+		66B0C9981C0045CE0070EFAB /* OpenCVData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C9971C0045CE0070EFAB /* OpenCVData.mm */; };
+		66B0C9A21C005EA60070EFAB /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B0C9A11C005EA60070EFAB /* opencv2.framework */; };
+		66B0C9A41C005EEA0070EFAB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B0C9A31C005EEA0070EFAB /* libsqlite3.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		66B0C96E1BFDC2AE0070EFAB /* MyFaceRecognize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFaceRecognize.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		66B0C9721BFDC2AE0070EFAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		66B0C9741BFDC2AE0070EFAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		66B0C9751BFDC2AE0070EFAB /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		66B0C9771BFDC2AE0070EFAB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		66B0C9781BFDC2AE0070EFAB /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		66B0C97D1BFDC2AE0070EFAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		66B0C9821BFDC2AE0070EFAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66B0C9881BFDC4780070EFAB /* rootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rootViewController.h; sourceTree = "<group>"; };
+		66B0C9891BFDC4780070EFAB /* rootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = rootViewController.mm; sourceTree = "<group>"; };
+		66B0C98E1BFEFD610070EFAB /* FaceDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceDetector.h; sourceTree = "<group>"; };
+		66B0C98F1BFEFD610070EFAB /* FaceDetector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FaceDetector.mm; sourceTree = "<group>"; };
+		66B0C9911C0002ED0070EFAB /* CustomFaceRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFaceRecognizer.h; sourceTree = "<group>"; };
+		66B0C9921C0002ED0070EFAB /* CustomFaceRecognizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CustomFaceRecognizer.mm; sourceTree = "<group>"; };
+		66B0C9961C0045CE0070EFAB /* OpenCVData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVData.h; sourceTree = "<group>"; };
+		66B0C9971C0045CE0070EFAB /* OpenCVData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVData.mm; sourceTree = "<group>"; };
+		66B0C9A11C005EA60070EFAB /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		66B0C9A31C005EEA0070EFAB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66B0C96B1BFDC2AE0070EFAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66B0C9A41C005EEA0070EFAB /* libsqlite3.tbd in Frameworks */,
+				66B0C9A21C005EA60070EFAB /* opencv2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66B0C9651BFDC2AE0070EFAB = {
+			isa = PBXGroup;
+			children = (
+				66B0C9701BFDC2AE0070EFAB /* MyFaceRecognize */,
+				66B0C96F1BFDC2AE0070EFAB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		66B0C96F1BFDC2AE0070EFAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66B0C96E1BFDC2AE0070EFAB /* MyFaceRecognize.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66B0C9701BFDC2AE0070EFAB /* MyFaceRecognize */ = {
+			isa = PBXGroup;
+			children = (
+				66B0C98B1BFEA9CB0070EFAB /* frameworks */,
+				66B0C9741BFDC2AE0070EFAB /* AppDelegate.h */,
+				66B0C9751BFDC2AE0070EFAB /* AppDelegate.mm */,
+				66B0C9771BFDC2AE0070EFAB /* ViewController.h */,
+				66B0C9781BFDC2AE0070EFAB /* ViewController.mm */,
+				66B0C97D1BFDC2AE0070EFAB /* Assets.xcassets */,
+				66B0C9821BFDC2AE0070EFAB /* Info.plist */,
+				66B0C9711BFDC2AE0070EFAB /* Supporting Files */,
+				66B0C9881BFDC4780070EFAB /* rootViewController.h */,
+				66B0C9891BFDC4780070EFAB /* rootViewController.mm */,
+				66B0C98E1BFEFD610070EFAB /* FaceDetector.h */,
+				66B0C98F1BFEFD610070EFAB /* FaceDetector.mm */,
+				66B0C9911C0002ED0070EFAB /* CustomFaceRecognizer.h */,
+				66B0C9921C0002ED0070EFAB /* CustomFaceRecognizer.mm */,
+				66B0C9961C0045CE0070EFAB /* OpenCVData.h */,
+				66B0C9971C0045CE0070EFAB /* OpenCVData.mm */,
+			);
+			path = MyFaceRecognize;
+			sourceTree = "<group>";
+		};
+		66B0C9711BFDC2AE0070EFAB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				66B0C9721BFDC2AE0070EFAB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66B0C98B1BFEA9CB0070EFAB /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66B0C9A11C005EA60070EFAB /* opencv2.framework */,
+				66B0C9A31C005EEA0070EFAB /* libsqlite3.tbd */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66B0C96D1BFDC2AE0070EFAB /* MyFaceRecognize */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66B0C9851BFDC2AE0070EFAB /* Build configuration list for PBXNativeTarget "MyFaceRecognize" */;
+			buildPhases = (
+				66B0C96A1BFDC2AE0070EFAB /* Sources */,
+				66B0C96B1BFDC2AE0070EFAB /* Frameworks */,
+				66B0C96C1BFDC2AE0070EFAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyFaceRecognize;
+			productName = MyFaceRecognize;
+			productReference = 66B0C96E1BFDC2AE0070EFAB /* MyFaceRecognize.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66B0C9661BFDC2AE0070EFAB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = matrix;
+				TargetAttributes = {
+					66B0C96D1BFDC2AE0070EFAB = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 66B0C9691BFDC2AE0070EFAB /* Build configuration list for PBXProject "MyFaceRecognize" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 66B0C9651BFDC2AE0070EFAB;
+			productRefGroup = 66B0C96F1BFDC2AE0070EFAB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66B0C96D1BFDC2AE0070EFAB /* MyFaceRecognize */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66B0C96C1BFDC2AE0070EFAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66B0C97E1BFDC2AE0070EFAB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66B0C96A1BFDC2AE0070EFAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66B0C9791BFDC2AE0070EFAB /* ViewController.mm in Sources */,
+				66B0C9761BFDC2AE0070EFAB /* AppDelegate.mm in Sources */,
+				66B0C98A1BFDC4780070EFAB /* rootViewController.mm in Sources */,
+				66B0C9981C0045CE0070EFAB /* OpenCVData.mm in Sources */,
+				66B0C9731BFDC2AE0070EFAB /* main.m in Sources */,
+				66B0C9901BFEFD610070EFAB /* FaceDetector.mm in Sources */,
+				66B0C9931C0002ED0070EFAB /* CustomFaceRecognizer.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		66B0C9831BFDC2AE0070EFAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		66B0C9841BFDC2AE0070EFAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66B0C9861BFDC2AE0070EFAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyFaceRecognize",
+				);
+				INFOPLIST_FILE = MyFaceRecognize/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = max.MyFaceRecognize;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		66B0C9871BFDC2AE0070EFAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyFaceRecognize",
+				);
+				INFOPLIST_FILE = MyFaceRecognize/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = max.MyFaceRecognize;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66B0C9691BFDC2AE0070EFAB /* Build configuration list for PBXProject "MyFaceRecognize" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66B0C9831BFDC2AE0070EFAB /* Debug */,
+				66B0C9841BFDC2AE0070EFAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66B0C9851BFDC2AE0070EFAB /* Build configuration list for PBXNativeTarget "MyFaceRecognize" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66B0C9861BFDC2AE0070EFAB /* Debug */,
+				66B0C9871BFDC2AE0070EFAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 66B0C9661BFDC2AE0070EFAB /* Project object */;
+}
