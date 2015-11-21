@@ -17,6 +17,7 @@
 		66B0C9981C0045CE0070EFAB /* OpenCVData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C9971C0045CE0070EFAB /* OpenCVData.mm */; };
 		66B0C9A21C005EA60070EFAB /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B0C9A11C005EA60070EFAB /* opencv2.framework */; };
 		66B0C9A41C005EEA0070EFAB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B0C9A31C005EEA0070EFAB /* libsqlite3.tbd */; };
+		66B0C9A61C00633C0070EFAB /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 66B0C9A51C00633C0070EFAB /* haarcascade_frontalface_alt2.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		66B0C9971C0045CE0070EFAB /* OpenCVData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVData.mm; sourceTree = "<group>"; };
 		66B0C9A11C005EA60070EFAB /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		66B0C9A31C005EEA0070EFAB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		66B0C9A51C00633C0070EFAB /* haarcascade_frontalface_alt2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_frontalface_alt2.xml; path = MyFaceRecognize/haarcascade_frontalface_alt2.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		66B0C9651BFDC2AE0070EFAB = {
 			isa = PBXGroup;
 			children = (
+				66B0C9A51C00633C0070EFAB /* haarcascade_frontalface_alt2.xml */,
 				66B0C9701BFDC2AE0070EFAB /* MyFaceRecognize */,
 				66B0C96F1BFDC2AE0070EFAB /* Products */,
 			);
@@ -166,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66B0C9A61C00633C0070EFAB /* haarcascade_frontalface_alt2.xml in Resources */,
 				66B0C97E1BFDC2AE0070EFAB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
