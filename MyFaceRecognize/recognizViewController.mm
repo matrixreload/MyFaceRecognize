@@ -7,6 +7,7 @@
 //
 
 #import "recognizViewController.h"
+#import "CaptureImageViewController.h"
 #import "CustomFaceRecognizer.h"
 #import "FaceDetector.h"
 #import "OpenCVData.h"
@@ -44,6 +45,15 @@
     [self.view addSubview:self.instructionLabel];
     [self.view addSubview:self.confidenceLabel];
     
+}
+
+- (void)navigationAddButton:(id)sender{
+    CaptureImageViewController *controller = [[CaptureImageViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)navigationBackButton:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated{

@@ -13,6 +13,7 @@
 		45A1A5D91C00BE51002DD449 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A1A5D81C00BE51002DD449 /* CoreVideo.framework */; };
 		45A1A5DB1C00BE85002DD449 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A1A5DA1C00BE85002DD449 /* CoreGraphics.framework */; };
 		45A1A5DD1C00BEA8002DD449 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A1A5DC1C00BEA8002DD449 /* AssetsLibrary.framework */; };
+		45A1A5E31C01F82A002DD449 /* CaptureImageViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45A1A5E21C01F82A002DD449 /* CaptureImageViewController.mm */; };
 		66B0C9731BFDC2AE0070EFAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C9721BFDC2AE0070EFAB /* main.m */; };
 		66B0C9761BFDC2AE0070EFAB /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C9751BFDC2AE0070EFAB /* AppDelegate.mm */; };
 		66B0C9791BFDC2AE0070EFAB /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C9781BFDC2AE0070EFAB /* ViewController.mm */; };
@@ -34,6 +35,8 @@
 		45A1A5D81C00BE51002DD449 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		45A1A5DA1C00BE85002DD449 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		45A1A5DC1C00BEA8002DD449 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		45A1A5E11C01F82A002DD449 /* CaptureImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureImageViewController.h; sourceTree = "<group>"; };
+		45A1A5E21C01F82A002DD449 /* CaptureImageViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CaptureImageViewController.mm; sourceTree = "<group>"; };
 		66B0C96E1BFDC2AE0070EFAB /* MyFaceRecognize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFaceRecognize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B0C9721BFDC2AE0070EFAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66B0C9741BFDC2AE0070EFAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				66B0C9971C0045CE0070EFAB /* OpenCVData.mm */,
 				45A1A5CF1C00AED8002DD449 /* recognizViewController.h */,
 				45A1A5D01C00AED8002DD449 /* recognizViewController.mm */,
+				45A1A5E11C01F82A002DD449 /* CaptureImageViewController.h */,
+				45A1A5E21C01F82A002DD449 /* CaptureImageViewController.mm */,
 			);
 			path = MyFaceRecognize;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				66B0C9981C0045CE0070EFAB /* OpenCVData.mm in Sources */,
 				66B0C9731BFDC2AE0070EFAB /* main.m in Sources */,
 				66B0C9901BFEFD610070EFAB /* FaceDetector.mm in Sources */,
+				45A1A5E31C01F82A002DD449 /* CaptureImageViewController.mm in Sources */,
 				66B0C9931C0002ED0070EFAB /* CustomFaceRecognizer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

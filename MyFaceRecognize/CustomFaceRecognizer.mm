@@ -87,6 +87,7 @@
 }
 
 
+
 - (NSMutableArray *)getAllPeople{
     NSMutableArray *results = [[NSMutableArray alloc] init];
     
@@ -153,6 +154,7 @@
     sqlite3_finalize(statement);
 }
 
+
 - (void)learnFace:(cv::Rect)face ofPersonID:(int)personID fromImage:(cv::Mat &)image{
     cv::Mat faceData = [self pullStandardizedFace:face fromImage:image];
     NSData *serialized = [OpenCVData serializeCvMat:faceData];
@@ -162,7 +164,7 @@
     sqlite3_stmt *statement;
     
     
-    if (sqlite3_prepare_v2(_db, insertSQL, -1, &statement, nil)) {
+    if (sqlite3_prepare_v2(_db, insertSQL, -1, &statement, nil) == SQLITE_OK) {
         sqlite3_bind_int(statement, 1, personID);
         sqlite3_bind_blob(statement, 2, serialized.bytes, (int)serialized.length  , SQLITE_TRANSIENT);
         sqlite3_step(statement);

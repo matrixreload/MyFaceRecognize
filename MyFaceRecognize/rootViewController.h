@@ -12,4 +12,8 @@
 
 @property(nonatomic, strong) UINavigationBar *navBar;
 
+- (void)navigationAddButton:(id) sender;
+
+- (void)navigationBackButton:(id) sender;
+
 @end
