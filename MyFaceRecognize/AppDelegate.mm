@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "recognizViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,13 +20,14 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.window.rootViewController = [[rootViewController alloc] init];
     
-    self.window.backgroundColor = [UIColor redColor];
+    self.window.backgroundColor = [UIColor grayColor];
     
-    [self.window.rootViewController.navigationController pushViewController:self.window.rootViewController animated:YES];
+    recognizViewController *root = [[recognizViewController alloc]init];
     
-    self.window.rootViewController.view.backgroundColor = [UIColor grayColor];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:root];
+    nav.navigationBar.hidden = YES;
+    [self.window setRootViewController:nav];
     
     [self.window makeKeyAndVisible];
     

@@ -7,6 +7,7 @@
 //
 
 #import "rootViewController.h"
+#import "recognizViewController.h"
 
 @interface rootViewController ()
 
@@ -19,6 +20,7 @@
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, screenRect.size.width, 50)];
+    
     self.navBar.tintColor = [UIColor grayColor];
     UINavigationItem * navigationBarTitle = [[UINavigationItem alloc] initWithTitle:@"face recoginze"];
     [self.navBar pushNavigationItem: navigationBarTitle animated:YES];
@@ -26,6 +28,12 @@
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(navigationAddButton:)];
     navigationBarTitle.rightBarButtonItem = item;
     [navigationBar setItems:[NSArray arrayWithObject: navigationBarTitle]];
+    
+    UIBarButtonItem *itemback = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(navigationBackButton:)];
+    navigationBarTitle.leftBarButtonItem = itemback;
+    [navigationBar setItems:[NSArray arrayWithObject: navigationBarTitle]];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,7 +44,19 @@
 
 
 - (void)navigationAddButton:(id) sender{
-    NSLog(@"Add ");
+//    recognizViewController *controller = [[recognizViewController alloc] init];
+//    if(self.navigationController == nil){
+//        NSLog(@"add");
+//    }
+//    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)navigationBackButton:(id) sender{
+    
+//    if (self.navigationController != nil) {
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }
+
 }
 
 

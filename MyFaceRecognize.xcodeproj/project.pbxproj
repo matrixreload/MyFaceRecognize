@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45A1A5D11C00AED8002DD449 /* recognizViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45A1A5D01C00AED8002DD449 /* recognizViewController.mm */; };
+		45A1A5D31C00BE1E002DD449 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A1A5D21C00BE1E002DD449 /* AVFoundation.framework */; };
+		45A1A5D71C00BE47002DD449 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A1A5D61C00BE47002DD449 /* CoreMedia.framework */; };
+		45A1A5D91C00BE51002DD449 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A1A5D81C00BE51002DD449 /* CoreVideo.framework */; };
+		45A1A5DB1C00BE85002DD449 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A1A5DA1C00BE85002DD449 /* CoreGraphics.framework */; };
+		45A1A5DD1C00BEA8002DD449 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A1A5DC1C00BEA8002DD449 /* AssetsLibrary.framework */; };
 		66B0C9731BFDC2AE0070EFAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C9721BFDC2AE0070EFAB /* main.m */; };
 		66B0C9761BFDC2AE0070EFAB /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C9751BFDC2AE0070EFAB /* AppDelegate.mm */; };
 		66B0C9791BFDC2AE0070EFAB /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66B0C9781BFDC2AE0070EFAB /* ViewController.mm */; };
@@ -21,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45A1A5CF1C00AED8002DD449 /* recognizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recognizViewController.h; sourceTree = "<group>"; };
+		45A1A5D01C00AED8002DD449 /* recognizViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = recognizViewController.mm; sourceTree = "<group>"; };
+		45A1A5D21C00BE1E002DD449 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		45A1A5D61C00BE47002DD449 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		45A1A5D81C00BE51002DD449 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		45A1A5DA1C00BE85002DD449 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		45A1A5DC1C00BEA8002DD449 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		66B0C96E1BFDC2AE0070EFAB /* MyFaceRecognize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFaceRecognize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B0C9721BFDC2AE0070EFAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66B0C9741BFDC2AE0070EFAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +60,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A1A5DD1C00BEA8002DD449 /* AssetsLibrary.framework in Frameworks */,
+				45A1A5DB1C00BE85002DD449 /* CoreGraphics.framework in Frameworks */,
+				45A1A5D91C00BE51002DD449 /* CoreVideo.framework in Frameworks */,
+				45A1A5D71C00BE47002DD449 /* CoreMedia.framework in Frameworks */,
+				45A1A5D31C00BE1E002DD449 /* AVFoundation.framework in Frameworks */,
 				66B0C9A41C005EEA0070EFAB /* libsqlite3.tbd in Frameworks */,
 				66B0C9A21C005EA60070EFAB /* opencv2.framework in Frameworks */,
 			);
@@ -91,6 +109,8 @@
 				66B0C9921C0002ED0070EFAB /* CustomFaceRecognizer.mm */,
 				66B0C9961C0045CE0070EFAB /* OpenCVData.h */,
 				66B0C9971C0045CE0070EFAB /* OpenCVData.mm */,
+				45A1A5CF1C00AED8002DD449 /* recognizViewController.h */,
+				45A1A5D01C00AED8002DD449 /* recognizViewController.mm */,
 			);
 			path = MyFaceRecognize;
 			sourceTree = "<group>";
@@ -106,6 +126,11 @@
 		66B0C98B1BFEA9CB0070EFAB /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45A1A5DC1C00BEA8002DD449 /* AssetsLibrary.framework */,
+				45A1A5DA1C00BE85002DD449 /* CoreGraphics.framework */,
+				45A1A5D81C00BE51002DD449 /* CoreVideo.framework */,
+				45A1A5D61C00BE47002DD449 /* CoreMedia.framework */,
+				45A1A5D21C00BE1E002DD449 /* AVFoundation.framework */,
 				66B0C9A11C005EA60070EFAB /* opencv2.framework */,
 				66B0C9A31C005EEA0070EFAB /* libsqlite3.tbd */,
 			);
@@ -143,6 +168,7 @@
 				TargetAttributes = {
 					66B0C96D1BFDC2AE0070EFAB = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = HY56637ZM4;
 					};
 				};
 			};
@@ -184,6 +210,7 @@
 				66B0C9791BFDC2AE0070EFAB /* ViewController.mm in Sources */,
 				66B0C9761BFDC2AE0070EFAB /* AppDelegate.mm in Sources */,
 				66B0C98A1BFDC4780070EFAB /* rootViewController.mm in Sources */,
+				45A1A5D11C00AED8002DD449 /* recognizViewController.mm in Sources */,
 				66B0C9981C0045CE0070EFAB /* OpenCVData.mm in Sources */,
 				66B0C9731BFDC2AE0070EFAB /* main.m in Sources */,
 				66B0C9901BFEFD610070EFAB /* FaceDetector.mm in Sources */,
@@ -279,6 +306,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyFaceRecognize",
@@ -287,6 +317,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = max.MyFaceRecognize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -295,6 +326,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyFaceRecognize",
@@ -303,6 +337,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = max.MyFaceRecognize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

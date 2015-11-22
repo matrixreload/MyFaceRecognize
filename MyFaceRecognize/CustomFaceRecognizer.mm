@@ -17,7 +17,7 @@
 
 
 - (id)init{
-    self = [self init];
+    self = [super init];
     if (self) {
         [self loadDatabase];
     }
@@ -48,7 +48,8 @@
 
 
 - (void)loadDatabase{
-    if (sqlite3_open([[self dbPath] UTF8String], &_db) != SQLITE_OK) {
+    int r = 0;
+    if ( (r = sqlite3_open([[self dbPath] UTF8String], &_db)) != SQLITE_OK) {
         NSLog(@"open database error");
     }
     
@@ -58,8 +59,15 @@
 
 - (NSString *)dbPath{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
-    NSString *documentDirectory = [paths objectAtIndex:0];
-    return [documentDirectory stringByAppendingPathComponent:@"training-data.sqlite"];
+    NSString *documentDirectory = [[paths objectAtIndex:0] stringByAppendingString:@"training-data.sqlite"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if ([fileManager fileExistsAtPath:documentDirectory]) {
+        [fileManager createFileAtPath:documentDirectory contents:nil attributes:nil];
+    }
+    
+    return documentDirectory;
     
 }
 
