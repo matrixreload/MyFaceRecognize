@@ -38,13 +38,13 @@
     self.instructionsLabel = [[UILabel alloc] initWithFrame:CGRectMake((frame.size.width-100)/2, frame.origin.y+10, 300, 20)];
     frame.origin.y += self.instructionsLabel.frame.size.height + 20;
     
-    self.cameraButton = [[UIButton alloc] initWithFrame:CGRectMake((frame.size.width-100)/2, frame.origin.y+10, 300, 20)];
+    self.cameraButton = [[UIButton alloc] initWithFrame:CGRectMake((frame.size.width-300)/2, frame.origin.y+10, 300, 30)];
     frame.origin.y += self.cameraButton.frame.size.height + 20;
     self.cameraButton.backgroundColor = [UIColor blueColor];
     [self.cameraButton setTitle:@"save" forState:UIControlStateNormal];
     [self.cameraButton addTarget:self action:@selector(btnsave:) forControlEvents:UIControlEventTouchDown];
     
-    self.nameTextView = [[UITextView alloc] initWithFrame:CGRectMake((frame.size.width-100)/2, frame.origin.y+10, 100, 20)];
+    self.nameTextView = [[UITextView alloc] initWithFrame:CGRectMake((frame.size.width-300)/2, frame.origin.y+10, 300, 30)];
     
     
     [self.view addSubview:self.previewImage];

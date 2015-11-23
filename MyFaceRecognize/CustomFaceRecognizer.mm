@@ -58,16 +58,24 @@
 
 
 - (NSString *)dbPath{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
-    NSString *documentDirectory = [[paths objectAtIndex:0] stringByAppendingString:@"training-data.sqlite"];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    
+    
+    //[documentDirectory stringByAppendingString:@"/training-data.sqlite"];
+    
+     NSString *filePath = [documentDirectory stringByAppendingPathComponent:@"training-data.sqlite"];
+    
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
-    if ([fileManager fileExistsAtPath:documentDirectory]) {
-        [fileManager createFileAtPath:documentDirectory contents:nil attributes:nil];
+    if (![fileManager fileExistsAtPath:filePath]) {
+        if([fileManager createFileAtPath:filePath contents:nil attributes:nil] != YES){
+            NSLog(@"create db file error");
+        }
     }
     
-    return documentDirectory;
+    return filePath;
     
 }
 
@@ -76,7 +84,7 @@
     const char* newperson = "INSERT INTO people (name) VALUES(?)";
     sqlite3_stmt *statement;
     
-    if (sqlite3_prepare_v2(_db, newperson, -1, &statement, nil)) {
+    if (sqlite3_prepare_v2(_db, newperson, -1, &statement, nil) == SQLITE_OK) {
         sqlite3_bind_text(statement, 1, [name UTF8String], -1 , SQLITE_TRANSIENT);
         sqlite3_step(statement);
     }
