@@ -196,6 +196,9 @@
     double confidence = 0.0;
     _model->predict([self pullStandardizedFace:face fromImage:image], predictedLabel, confidence);
     
+    
+    confidence = confidence / (confidence + 1.0f);
+    
     NSString *personName = @"";
     
     if (predictedLabel != -1) {
